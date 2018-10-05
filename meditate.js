@@ -11,7 +11,7 @@ var alpha = 10; // how opaque is the tracing system
 var trace = true; // are we tracing?
 
 function setup() {
-  createCanvas(710, 400);
+  canvas = createCanvas(window.innerWidth, window.innerHeight);
 
   rad = height/4; // compute radius for central circle
   background(204); // clear the screen
@@ -61,4 +61,8 @@ function keyReleased() {
     trace = !trace;
     background(255);
   }
+}
+
+function windowResized() {
+  resizeCanvas(windowWidth, windowHeight);
 }
